@@ -1,0 +1,27 @@
+.proContainer {
+  background-color: red;
+  
+}
+
+.proContainer:hover {
+  transform: scale(1.03);
+  background-color: purple;
+}
+
+@media (max-width: 476px) {
+  .proContainer {
+    background-color: black;
+  }
+  .proContainer:hover {
+    transform: scale(1.6);
+  }
+}
+
+.cardHeaderView:hover {
+  transform: scale(1.3);
+  background-color: grey; 
+}
+
+.cardContentView:hover {
+  background-color: lightcoral;
+}
