@@ -44,10 +44,10 @@ const Course = ({
 
   return (
     <div classeName="container">
-      <Card className={[classes.root]} onClick={onCourseComponentClick}>
+      <Card className={[classes.root, "course-card"]} onClick={onCourseComponentClick}>
         <CardActionArea>
           <CardMedia className={classes.media} image={imageUrl} title="" />
-          <CardContent>
+          <CardContent className="card-name">
             <Typography gutterBottom variant="h5" component="h2">
               {name}
             </Typography>

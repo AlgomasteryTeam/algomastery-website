@@ -1,18 +1,23 @@
 .container {
   display: flex !important;
   flex-direction: row !important;
-  margin-left: 5% !important;
-  margin-top: 100 !important;
 }
 
-.container:hover {
-  transform: scale(0.3)!important;
-  background-color: grey!important; 
+.course-card {
+  margin-left: 3vw;
+  margin-top: 5vh;
+  border-radius: 10px!important;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+  background-color: #7FC8A9
 }
 
 .button {
   color: #000!important;
 }
+
 .button:hover {
   color: teal!important;
 }

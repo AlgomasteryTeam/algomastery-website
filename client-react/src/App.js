@@ -1,4 +1,4 @@
-import MyNavbar from './shared/Navbar/Navbar'
+import MyNavbar from './shared/Navbar/Navbar2'
 import Home from './pages/Home/Home'
 import Courses from './pages/Courses/Courses'
 import About from './pages/About/About'
