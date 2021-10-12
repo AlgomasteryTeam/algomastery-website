@@ -15,9 +15,11 @@ import Contact from './pages/Contact/Contact'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 import Profile from './pages/Profile/Profile'
 import Feedback from './pages/Feedback/Feedback'
+import Editor from './pages/Code/Editor'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+// import { ThemeProvider } from '@material-ui/styles';
 
 function App() {
   return (
@@ -39,6 +41,7 @@ function App() {
         <Route path="/contact" component={Contact} />
         <Route path="/privacypolicy" component={PrivacyPolicy} />
         <Route path="/feedback" component={Feedback} />
+        <Route path="/editor" component={Editor} />
       </Router>
     </>
   )

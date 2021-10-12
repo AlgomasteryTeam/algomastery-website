@@ -15,12 +15,13 @@ import Typography from '@mui/material/Typography';
 //import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
+import './BottomNavbar.css'
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://algomastery.com">
+      <Link className="react-link" color="inherit" href="https://algomastery.com">
         Algomastery
       </Link>{' '}
       {new Date().getFullYear()}
@@ -79,7 +80,7 @@ function PricingContent() {
               <ul>
                 {footer.description.map((item) => (
                   <li key={item}>
-                    <Link to={item.toLowerCase()}>
+                    <Link className="react-link" to={item.toLowerCase()}>
                       {item}
                     </Link>
                   </li>

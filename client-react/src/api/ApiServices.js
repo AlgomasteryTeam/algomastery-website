@@ -20,6 +20,9 @@ const simpleGetCall = (url) => {
 const simplePostCall = async (url, body) => {
   const headers = {
     'Content-Type': 'application/json;charset=UTF-8',
+    crossorigin: true,
+    'Access-Control-Allow-Credentials': true,
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
     "Access-Control-Allow-Origin": "*",
   }
   return axios.post(url, body, {

@@ -230,9 +230,8 @@ const CourseContentsEnrolled = ({ content }) => {
             <Tab label="Course Contents" {...a11yProps(0)} />
             <Tab label="Q&A" {...a11yProps(1)} />
             <Tab label="Quiz" {...a11yProps(2)} />
-            <Tab label="Practise" {...a11yProps(3)} />
+            {/* <Tab label="Practise" {...a11yProps(3)} /> */}
             <Tab label="Overview" {...a11yProps(4)} />
-            <Tab label="Anouncements" {...a11yProps(5)} />
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
@@ -283,14 +282,11 @@ const CourseContentsEnrolled = ({ content }) => {
             showInstantFeedback={true}
           />
         </TabPanel>
-        <TabPanel value={value} index={3}>
+        {/* <TabPanel value={value} index={3}>
           Practise
-        </TabPanel>
+        </TabPanel> */}
         <TabPanel value={value} index={4}>
           Overview
-        </TabPanel>
-        <TabPanel value={value} index={5}>
-          Anouncements
         </TabPanel>
 
       </Box>

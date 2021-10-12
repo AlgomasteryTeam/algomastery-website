@@ -23,6 +23,7 @@ import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import DashboardIcon from '@mui/icons-material/Dashboard';
+import './Navbar.css'
 
 export default function ButtonAppBar() {
 
@@ -68,7 +69,7 @@ export default function ButtonAppBar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <Link to="/yourcourses">
+        <Link className="react-link" to="/yourcourses">
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
@@ -79,7 +80,7 @@ export default function ButtonAppBar() {
           </ListItem>
         </Link>
 
-        <Link to="/profile">
+        <Link className="react-link" to="/profile">
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
@@ -90,7 +91,7 @@ export default function ButtonAppBar() {
           </ListItem>
         </Link>
 
-        <Link to="/pro">
+        <Link className="react-link" to="/pro">
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
@@ -101,7 +102,7 @@ export default function ButtonAppBar() {
           </ListItem>
         </Link>
 
-        <Link to="/dashboard">
+        <Link className="react-link" to="/dashboard">
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
@@ -119,7 +120,7 @@ export default function ButtonAppBar() {
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar style={{ background: 'teal' }} position="static">
           <Toolbar>
             <IconButton
               size="large"
@@ -146,18 +147,17 @@ export default function ButtonAppBar() {
 
             </IconButton>
             <Typography href="/home" variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              <Link to="/">
+              <Link className="react-link-topbar" to="/">
                 <Button color="inherit">Algomastery</Button>
               </Link>
-
             </Typography>
 
-            <Link to="/login">
-              <Button href="/login" color="inherit">Login</Button>
+            <Link className="react-link-topbar" to="/login">
+              <Button color="inherit">Login</Button>
             </Link>
 
-            <Link to="/signup">
-              <Button href="/signup" color="inherit">Signup</Button>
+            <Link className="react-link-topbar" to="/signup">
+              <Button color="inherit">Signup</Button>
             </Link>
 
             <IconButton
@@ -187,7 +187,7 @@ export default function ButtonAppBar() {
             >
               <MenuItem onClick={handleClose}>Profile</MenuItem>
               <MenuItem onClick={handleClose}>My account</MenuItem>
-              <Link to="/pro">
+              <Link className="react-link" to="/pro">
                 <MenuItem onClick={handleProAccount}>Pro</MenuItem>
               </Link>
 

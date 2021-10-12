@@ -18,6 +18,7 @@ const useStyles = makeStyles({
   media: {
     height: 140,
   },
+
 })
 
 const Course = ({
@@ -43,7 +44,7 @@ const Course = ({
 
   return (
     <div classeName="container">
-      <Card className={classes.root} onClick={onCourseComponentClick}>
+      <Card className={[classes.root]} onClick={onCourseComponentClick}>
         <CardActionArea>
           <CardMedia className={classes.media} image={imageUrl} title="" />
           <CardContent>
@@ -56,10 +57,10 @@ const Course = ({
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
+          <Button className="button" size="small">
             Rating: {rating}/5
           </Button>
-          <Button size="small" color="primary">
+          <Button className="button" size="small">
             Price: <del>{originalPrice}</del>
             {discountedPrice}
           </Button>

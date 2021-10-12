@@ -12,7 +12,19 @@
 }
 
 .navbar-element-link {
-  color:rgb(43, 125, 126) !important;
+  color: teal!important;
   margin-left: 10%;
 
+}
+
+.react-link {
+  text-decoration: none!important;
+}
+
+.react-link-topbar {
+  text-decoration: none;
+  color: #fff!important;
+}
+.react-link-topbar:hover {
+  color: #000!important;
 }

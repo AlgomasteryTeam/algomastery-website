@@ -4,3 +4,15 @@
   margin-left: 5% !important;
   margin-top: 100 !important;
 }
+
+.container:hover {
+  transform: scale(0.3)!important;
+  background-color: grey!important; 
+}
+
+.button {
+  color: #000!important;
+}
+.button:hover {
+  color: teal!important;
+}

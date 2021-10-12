@@ -1,0 +1,7 @@
+.react-link {
+  text-decoration: none;
+  color: #000!important;
+}
+.react-link:hover {
+  color: teal!important;
+}

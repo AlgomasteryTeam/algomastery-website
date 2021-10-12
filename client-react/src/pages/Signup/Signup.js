@@ -5,13 +5,14 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Link } from 'react-router-dom'
+import './Signup.css'
 
 function Copyright(props) {
   return (
@@ -51,7 +52,7 @@ export default function SignUp() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: 'teal' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -61,44 +62,59 @@ export default function SignUp() {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  autoComplete="fname"
-                  name="firstName"
+                  InputProps={{ disableUnderline: true }}
+                  margin="normal"
+                  autoFocus
                   required
                   fullWidth
-                  id="firstName"
+                  name="firstname"
                   label="First Name"
-                  autoFocus
+                  type="text"
+                  id="standard-basic"
+                  autoComplete="text"
+                  variant="standard"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  InputProps={{ disableUnderline: true }}
+                  margin="normal"
                   required
                   fullWidth
-                  id="lastName"
+                  name="lastname"
                   label="Last Name"
-                  name="lastName"
-                  autoComplete="lname"
+                  type="text"
+                  id="standard-basic"
+                  autoComplete="text"
+                  variant="standard"
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  InputProps={{ disableUnderline: true }}
+                  margin="normal"
                   required
                   fullWidth
-                  id="email"
-                  label="Email Address"
                   name="email"
+                  label="Email"
+                  type="email"
+                  id="standard-basic"
                   autoComplete="email"
+                  variant="standard"
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  InputProps={{ disableUnderline: true }}
+                  margin="normal"
                   required
                   fullWidth
                   name="password"
                   label="Password"
                   type="password"
-                  id="password"
-                  autoComplete="new-password"
+                  id="standard-basic"
+                  autoComplete="current-password"
+                  variant="standard"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -109,6 +125,7 @@ export default function SignUp() {
               </Grid>
             </Grid>
             <Button
+              className="button"
               type="submit"
               fullWidth
               variant="contained"
@@ -118,14 +135,13 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link className="react-link" to="/login" variant="body2">
                   Already have an account? Login
                 </Link>
               </Grid>
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
   );

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Widget, addResponseMessage } from 'react-chat-widget';
 import avatar from '../../assets/images/avatar.jpg';
 import 'react-chat-widget/lib/styles.css';
+import './Chat.css'
 
 const Chat = () => {
 
@@ -23,6 +24,7 @@ const Chat = () => {
         profileAvatar={avatar}
         title="Algomastery"
         subtitle="Have a doubt ? Ask us !"
+        color="teal"
       />
     </div>
   );
