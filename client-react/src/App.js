@@ -8,6 +8,7 @@ import Course from './pages/Course/Course'
 import Dashboard from './pages/Dashboard/Dashboard'
 import BottomNavbar from './shared/BottomNavbar/BottomNavbar'
 import Pro from './pages/Pro/Pro'
+import Payment from './pages/Payment/Payment'
 import EnrolledCourse from './pages/EnrolledCourse/EnrolledCourse'
 import EnrolledCourses from './pages/EnrolledCourses/EnrolledCourses'
 import Certificate from './pages/Certificate/Certificate'
@@ -42,6 +43,7 @@ function App() {
         <Route path="/privacypolicy" component={PrivacyPolicy} />
         <Route path="/feedback" component={Feedback} />
         <Route path="/editor" component={Editor} />
+        <Route path="/payment" component={Payment} />
       </Router>
     </>
   )

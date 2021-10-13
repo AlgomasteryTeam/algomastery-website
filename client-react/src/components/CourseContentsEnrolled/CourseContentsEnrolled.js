@@ -23,8 +23,8 @@ import BasicTabs from '../../containers/Tab/Tab'
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Quiz from 'react-quiz-component';
 import Comments from '../Comments/Comments'
+import TextEditor from '../TextEditor/TextEditor'
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -96,104 +96,6 @@ function a11yProps(index) {
   };
 }
 
-const quizData = {
-  "quizTitle": "React Quiz Component Demo",
-  "quizSynopsis": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim",
-  "questions": [
-    {
-      "question": "How can you access the state of a component from inside of a member function?",
-      "questionType": "text",
-      //"questionPic": "https://dummyimage.com/600x400/000/fff&text=X", // if you need to display Picture in Question
-      "answerSelectionType": "single",
-      "answers": [
-        "this.getState()",
-        "this.prototype.stateValue",
-        "this.state",
-        "this.values"
-      ],
-      "correctAnswer": "3",
-      "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-      "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "20"
-    },
-    {
-      "question": "ReactJS is developed by _____?",
-      "questionType": "text",
-      "answerSelectionType": "single",
-      "answers": [
-        "Google Engineers",
-        "Facebook Engineers"
-      ],
-      "correctAnswer": "2",
-      "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-      "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "20"
-    },
-    {
-      "question": "ReactJS is an MVC based framework?",
-      "questionType": "text",
-      "answerSelectionType": "single",
-      "answers": [
-        "True",
-        "False"
-      ],
-      "correctAnswer": "2",
-      "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-      "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "10"
-    },
-    {
-      "question": "Which of the following concepts is/are key to ReactJS?",
-      "questionType": "text",
-      "answerSelectionType": "single",
-      "answers": [
-        "Component-oriented design",
-        "Event delegation model",
-        "Both of the above",
-      ],
-      "correctAnswer": "3",
-      "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-      "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "30"
-    },
-    {
-      "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-      "questionType": "photo",
-      "answerSelectionType": "single",
-      "answers": [
-        'hi',
-        'hello',
-        'hey'
-      ],
-      "correctAnswer": "1",
-      "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-      "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "20"
-    },
-    {
-      "question": "What are the advantages of React JS?",
-      "questionType": "text",
-      "answerSelectionType": "multiple",
-      "answers": [
-        "React can be used on client and as well as server side too",
-        "Using React increases readability and makes maintainability easier. Component, Data patterns improves readability and thus makes it easier for manitaining larger apps",
-        "React components have lifecycle events that fall into State/Property Updates",
-        "React can be used with any other framework (Backbone.js, Angular.js) as it is only a view layer"
-      ],
-      "correctAnswer": [1, 2, 4],
-      "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-      "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "20"
-    },
-  ]
-}
-
 const CourseContentsEnrolled = ({ content }) => {
 
   const [value, setValue] = React.useState(0);
@@ -229,7 +131,7 @@ const CourseContentsEnrolled = ({ content }) => {
             aria-label="scrollable force tabs example">
             <Tab label="Course Contents" {...a11yProps(0)} />
             <Tab label="Q&A" {...a11yProps(1)} />
-            <Tab label="Quiz" {...a11yProps(2)} />
+            <Tab label="Certificate" {...a11yProps(2)} />
             {/* <Tab label="Practise" {...a11yProps(3)} /> */}
             <Tab label="Overview" {...a11yProps(4)} />
           </Tabs>
@@ -273,14 +175,10 @@ const CourseContentsEnrolled = ({ content }) => {
         <TabPanel value={value} index={1}>
           Q&A
           <Comments />
+          <TextEditor />
         </TabPanel>
         <TabPanel value={value} index={2}>
-          Quiz
-          <Quiz
-            quiz={quizData}
-            shuffle={true}
-            showInstantFeedback={true}
-          />
+          Certificate
         </TabPanel>
         {/* <TabPanel value={value} index={3}>
           Practise

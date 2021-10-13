@@ -1,19 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Widget, addResponseMessage } from 'react-chat-widget';
 import { simplePostCall } from '../../api/ApiServices'
 import ApiConfig from '../../api/ApiConfig'
 import avatar from '../../assets/images/avatar.jpg';
+import validator from 'email-validator'
+import { toast } from 'react-toastify'
 import 'react-chat-widget/lib/styles.css';
 import './Chat.css'
 
 const Chat = () => {
+
+  const [emailRecieved, setEmailRecieved] = useState(false)
+  const [emailValidationCount, setEmailValidationCount] = useState(1)
 
   useEffect(() => {
     addResponseMessage('Enter your email to proceed!');
   }, []);
 
   const handleNewUserMessage = async (newMessage) => {
-
     const sendChatMessageUrl = ApiConfig.SEND_CHAT_MESSAGE
     const messageBody = {
       email: newMessage
@@ -22,18 +26,23 @@ const Chat = () => {
     const response = await simplePostCall(sendChatMessageUrl, messageBody)
     console.log('Response from chat post request: ', JSON.stringify(response))
 
-
-    addResponseMessage('We will get back shortly!');
+    addResponseMessage('We will get back soon')
   };
 
+  const beforeLaunch = () => {
+    toast.success('Do something before launching the chat window')
+    console.log('do something for launching')
+  }
+
   return (
-    <div className="App">
+    <div className="container">
       <Widget
         handleNewUserMessage={handleNewUserMessage}
         profileAvatar={avatar}
         title="Algomastery"
         subtitle="Have a doubt ? Ask us !"
         color="teal"
+        handleQuickButtonClicked={beforeLaunch}
       />
     </div>
   );
