@@ -5,7 +5,7 @@ const simpleGetCall = (url) => {
     'Content-Type': 'application/json;charset=UTF-8',
     "Access-Control-Allow-Origin": "*",
   }
-  return axios.post(url, {
+  return axios.get(url, {
     headers: headers,
   })
     .then(function (response) {
