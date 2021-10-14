@@ -1,0 +1,14 @@
+.home-education-image-desktop {
+  height: 100vh;
+  width: 80vw;
+}
+
+.home-education-image-tablet {
+  height: 50vh;
+  width: 80vw;
+}
+
+.home-education-image-mobile {
+  height: 30vh;
+  width: 60vw;
+}

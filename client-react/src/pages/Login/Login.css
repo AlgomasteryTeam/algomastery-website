@@ -5,3 +5,8 @@
 .react-link:hover {
   color: teal;
 }
+
+.login-image-desktop {
+  height: 150px;
+  width: 200px;
+}

@@ -12,23 +12,44 @@
 }
 
 .navbar-element-link {
-  color: teal!important;
+  text-decoration: none;
   margin-left: 10%;
 }
 
-.react-link {
+.react-link-login, .react-link-signup {
   text-decoration: none!important;
+  color: black;
+  margin-top: 10px;
+}
+
+.react-link-login:hover, .react-link-signup:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .react-link-topbar {
   text-decoration: none;
-  color: #fff!important;
+  color: black;
 }
 
 .react-link-topbar:hover {
-  color: #000!important;
+  background-color: white;
+  color: black;
 }
 
 .app-title {
   color: #000!important;
+}
+
+.login-link-view {
+  display: flex !important;
+  height: 60px;
+  width: 90px;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-link-view:hover, signup-link-view:hover .react-link-login {
+  background-color: #FF9292;
+  border-radius: 5px;
 }

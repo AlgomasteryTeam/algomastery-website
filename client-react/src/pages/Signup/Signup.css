@@ -4,7 +4,7 @@
 }
 
 .react-link:hover {
-  color:#009688;
+  color: #009688;
 }
 
 /* .button {
@@ -14,3 +14,8 @@
 .button:hover {
   color: red!important;
 } */
+
+.signup-image-desktop {
+  height: 150px;
+  width: 200px;
+}

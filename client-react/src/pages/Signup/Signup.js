@@ -52,9 +52,11 @@ export default function SignUp() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'teal' }}>
+          {/* <Avatar sx={{ m: 1, bgcolor: 'teal' }}>
             <LockOutlinedIcon />
-          </Avatar>
+          </Avatar> */}
+          <img className="signup-image-desktop" src="assets/images/login.gif" alt="Login Gif" />
+
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
