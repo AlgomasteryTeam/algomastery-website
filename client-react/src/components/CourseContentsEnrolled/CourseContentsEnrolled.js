@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { useState } from 'react'
 import { Document, Page } from 'react-pdf';
+import {
+  useWindowWidth,
+  useWindowHeight,
+} from '@react-hook/window-size'
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion from '@mui/material/Accordion';
@@ -25,6 +29,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Comments from '../Comments/Comments'
 import TextEditor from '../TextEditor/TextEditor'
+import './CourseContentsEnrolled.css'
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -99,7 +104,8 @@ function a11yProps(index) {
 const CourseContentsEnrolled = ({ content }) => {
 
   const [value, setValue] = React.useState(0);
-
+  const windowWidth = useWindowWidth()
+  const windowHeight = useWindowHeight()
   const handleChangeTabs = (event, newValue) => {
     setValue(newValue);
   };
@@ -112,6 +118,7 @@ const CourseContentsEnrolled = ({ content }) => {
   };
 
   const playLectureVideo = (lectureVideoLink) => {
+    console.log('window size: ', windowWidth)
     setLectureLink(lectureVideoLink)
   }
 
@@ -137,40 +144,52 @@ const CourseContentsEnrolled = ({ content }) => {
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-          <h3>Course Contents</h3>
-          <Vimeo
-            video={lectureLink}
-          />
+          <div className="course-contents-div">
+            {/* 
+            <div className="course-contents-title-view">
+              <h3 className="course-contents-title-text">Course Contents</h3>
+            </div> */}
+            <div className="course-contents-video-div">
+              <Vimeo
+                video={lectureLink}
+                height={windowHeight == 360 ? 300 : (windowHeight == 768 ? 650 : 500)}
+                width={windowWidth == 360 ? 300 : (windowWidth == 768 ? 600 : 1000)}
+              />
+            </div>
 
-          {content.sections.map((section, index) => {
-            return (
-              <>
-                <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-                  <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                    <Typography>{section.title}</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Typography>
-                      <List>
-                        {section.topics.map((topic, index) => {
-                          return (
-                            <ListItem disablePadding onClick={topic.isVideo ? () => playLectureVideo(topic.view) : () => viewLectureDocuments(topic.view)}>
-                              <ListItemButton>
-                                <ListItemIcon>
-                                  {topic.isVideo ? <OndemandVideoIcon /> : <DescriptionIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={topic.title} secondary={topic.subtitle} />
-                              </ListItemButton>
-                            </ListItem>
-                          )
-                        })}
-                      </List>
-                    </Typography>
-                  </AccordionDetails>
-                </Accordion>
-              </>
-            )
-          })}
+            {/* <div className={`${windowWidth == 360} ? course-lectures-mobile : ${windowWidth == 768} ? course-lectures-tablet : course-lectures-desktop`}> */}
+            <div className="course-lectures-div">
+              {content.sections.map((section, index) => {
+                return (
+                  <>
+                    <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                      <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                        <Typography>{section.title}</Typography>
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        <Typography>
+                          <List>
+                            {section.topics.map((topic, index) => {
+                              return (
+                                <ListItem disablePadding onClick={topic.isVideo ? () => playLectureVideo(topic.view) : () => viewLectureDocuments(topic.view)}>
+                                  <ListItemButton>
+                                    <ListItemIcon>
+                                      {topic.isVideo ? <OndemandVideoIcon /> : <DescriptionIcon style={{ color: '#316B83'}} />}
+                                    </ListItemIcon>
+                                    <ListItemText primary={topic.title} secondary={topic.subtitle} />
+                                  </ListItemButton>
+                                </ListItem>
+                              )
+                            })}
+                          </List>
+                        </Typography>
+                      </AccordionDetails>
+                    </Accordion>
+                  </>
+                )
+              })}
+            </div>
+          </div>
         </TabPanel>
         <TabPanel value={value} index={1}>
           Q&A
@@ -179,6 +198,9 @@ const CourseContentsEnrolled = ({ content }) => {
         </TabPanel>
         <TabPanel value={value} index={2}>
           Certificate
+          <div className="certificate-gif-view">
+            <img className="certificate-gif" src="assets/gifs/certificate.gif" alt="Certificate" />
+          </div>
         </TabPanel>
         {/* <TabPanel value={value} index={3}>
           Practise
@@ -191,7 +213,7 @@ const CourseContentsEnrolled = ({ content }) => {
 
 
 
-    </div>
+    </div >
   );
 }
 

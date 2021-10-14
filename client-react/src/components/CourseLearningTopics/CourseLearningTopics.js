@@ -15,7 +15,7 @@ const CourseLearningTopics = ({ whatYouWillLearn }) => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <CheckIcon />
+              <CheckIcon style={{ color: '#63B4B8' }} />
             </ListItemIcon>
             <ListItemText primary={whatYouWillLearn[0]} />
           </ListItemButton>
@@ -24,7 +24,7 @@ const CourseLearningTopics = ({ whatYouWillLearn }) => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <CheckIcon />
+              <CheckIcon style={{ color: '#63B4B8' }} />
             </ListItemIcon>
             <ListItemText primary={whatYouWillLearn[1]} />
           </ListItemButton>
@@ -33,7 +33,7 @@ const CourseLearningTopics = ({ whatYouWillLearn }) => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <CheckIcon />
+              <CheckIcon style={{ color: '#63B4B8' }} />
             </ListItemIcon>
             <ListItemText primary={whatYouWillLearn[2]} />
           </ListItemButton>
@@ -42,7 +42,7 @@ const CourseLearningTopics = ({ whatYouWillLearn }) => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <CheckIcon />
+              <CheckIcon style={{ color: '#63B4B8' }} />
             </ListItemIcon>
             <ListItemText primary={whatYouWillLearn[3]} />
           </ListItemButton>

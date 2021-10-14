@@ -22,6 +22,10 @@
   margin-top: 10px;
 }
 
+.login-text, .signup-text {
+  font-family: 'Roboto', sans-serif!important;
+}
+
 .react-link-login:hover, .react-link-signup:hover {
   text-decoration: none;
   color: white;
@@ -29,12 +33,24 @@
 
 .react-link-topbar {
   text-decoration: none;
+  font-family: 'Pacifico', cursive;
   color: black;
 }
 
+.react-text-topbar {
+  margin-top: 7px;
+  margin-left: 2px;
+}
+
+.title-view {
+  height: 55px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+}
+
 .react-link-topbar:hover {
-  background-color: white;
-  color: black;
+  color: white
 }
 
 .app-title {
@@ -49,7 +65,12 @@
   align-items: center;
 }
 
-.login-link-view:hover, signup-link-view:hover .react-link-login {
+.login-link-view:hover, signup-link-view:hover, .react-link-topbar:hover {
   background-color: #FF9292;
   border-radius: 5px;
+}
+
+.Algomastery-logo-desktop {
+  height: 60px;
+  width: 45px;
 }

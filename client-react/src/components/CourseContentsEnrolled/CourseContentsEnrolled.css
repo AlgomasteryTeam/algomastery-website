@@ -1,0 +1,39 @@
+.certificate-gif {
+  height: 300px;
+  width: 400px;
+}
+
+.certificate-gif-view {
+  display: flex;
+  justify-content: center;
+}
+
+/* .course-contents-div {
+  display: flex;
+  justify-content: center;
+} */
+
+.course-contents-title-view {
+  display: flex;
+  justify-content: center;
+}
+
+.course-contents-video-div {
+  display: flex;
+  justify-content: center;
+}
+
+/* .course-lectures-desktop {
+  height: 600px;
+  width: 1000px
+}
+
+.course-lectures-tablet {
+  height: 300px;
+  width: 500px
+}
+
+.course-lectures-mobile {
+  height: 200px;
+  width: 600px
+} */

@@ -1,0 +1,6 @@
+.course-details-upper-section-mobile {}
+
+.course-details-upper-section-desktop {
+  display: flex;
+  justify-content: space-around;
+}

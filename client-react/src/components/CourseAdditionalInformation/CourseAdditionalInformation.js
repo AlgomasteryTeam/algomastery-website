@@ -6,20 +6,18 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { bounce } from 'react-animations';
+import Vimeo from '@u-wave/react-vimeo';
 
 const CourseAdditionalInformation = ({ originalPrice, discountedPrice, imageUrl }) => {
 
   return (
     <>
       <Button color="error" size="large" variant="contained">Enroll Now</Button>
-
+      <Vimeo
+        video="225956849"
+        id="1"
+      />
       <Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          component="img"
-          height="140"
-          image={imageUrl}
-          alt="Image"
-        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             Today's price: {discountedPrice}

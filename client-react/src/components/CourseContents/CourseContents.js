@@ -81,7 +81,7 @@ const CourseContents = ({ content }) => {
                         <ListItem disablePadding>
                           <ListItemButton>
                             <ListItemIcon>
-                              {topic.isVideo ? <OndemandVideoIcon /> : <DescriptionIcon />}
+                              {topic.isVideo ? <OndemandVideoIcon style={{ color: '#931A25'}} /> : <DescriptionIcon style={{ color: '#316B83' }} />}
                             </ListItemIcon>
                             <ListItemText primary={topic.title} secondary={topic.subtitle} />
                           </ListItemButton>

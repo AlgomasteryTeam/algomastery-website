@@ -31,7 +31,7 @@ const CourseFeaturesList = ({
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <OndemandVideoIcon />
+              <OndemandVideoIcon style={{ color: '#FF9292' }} />
             </ListItemIcon>
             <ListItemText primary={`${timeCountInHours} hours on-demand videos`} />
           </ListItemButton>
@@ -40,7 +40,7 @@ const CourseFeaturesList = ({
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <InsertDriveFileIcon />
+              <InsertDriveFileIcon style={{ color: '#FF9292' }} />
             </ListItemIcon>
             <ListItemText primary={`${numberOfArticles} articles`} />
           </ListItemButton>
@@ -49,7 +49,7 @@ const CourseFeaturesList = ({
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <CloudDownloadIcon />
+              <CloudDownloadIcon style={{ color: '#FF9292' }} />
             </ListItemIcon>
             <ListItemText primary={`${numberOfDownloadedResourses} downloadable resources`} />
           </ListItemButton>
@@ -58,7 +58,7 @@ const CourseFeaturesList = ({
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <HelpIcon />
+              <HelpIcon style={{ color: '#FF9292' }} />
             </ListItemIcon>
             <ListItemText primary={`${numberOfPractiseSets} practice test`} />
           </ListItemButton>
@@ -67,7 +67,7 @@ const CourseFeaturesList = ({
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <CodeIcon />
+              <CodeIcon style={{ color: '#FF9292' }} />
             </ListItemIcon>
             <ListItemText primary={`${numberOfCodingExercises} coding exercises`} />
           </ListItemButton>
@@ -76,7 +76,7 @@ const CourseFeaturesList = ({
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <AccessibilityIcon />
+              <AccessibilityIcon style={{ color: '#FF9292' }} />
             </ListItemIcon>
             <ListItemText primary={`${accessDurationInDays} days access`} />
           </ListItemButton>
@@ -85,7 +85,7 @@ const CourseFeaturesList = ({
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <ImportantDevicesIcon />
+              <ImportantDevicesIcon style={{ color: '#FF9292' }} />
             </ListItemIcon>
             <ListItemText primary={`Access on ${acessOnWhichDevices}`} />
           </ListItemButton>
@@ -94,7 +94,7 @@ const CourseFeaturesList = ({
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <CardMembershipIcon />
+              <CardMembershipIcon style={{ color: '#FF9292' }} />
             </ListItemIcon>
             <ListItemText primary={isCertificateAvailable ? 'Certificate of completion' : 'No certificate of completion'} />
           </ListItemButton>

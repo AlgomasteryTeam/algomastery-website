@@ -12,3 +12,11 @@
   height: 30vh;
   width: 60vw;
 }
+
+.mobile {
+  color: red;
+}
+
+.desktop {
+  color: teal
+}

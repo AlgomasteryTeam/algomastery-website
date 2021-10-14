@@ -22,6 +22,12 @@ const Home = () => {
     return isNotMobile ? children : null
   }
 
+  // const isDesktop = useMediaQuery({
+  //   query: '(min-width: 768px, max-width: 1440px)'
+  // })
+  // const isTablet = useMediaQuery({ query: '(min-width: 430px, max-width: 767px)' })
+  // const isMobile = useMediaQuery({ query: '(min-width: 300px, max-width: 430px)' })
+
   return (
 
     <div>

@@ -3,8 +3,18 @@ import CourseAdditionalInformation from '../../components/CourseAdditionalInform
 import CourseFeaturesList from '../../components/CourseFeaturesList/CourseFeaturesList'
 import CourseLearningTopics from '../../components/CourseLearningTopics/CourseLearningTopics'
 import CourseContents from '../../components/CourseContents/CourseContents'
+import { useMediaQuery } from 'react-responsive'
+import {
+  useWindowWidth,
+  useWindowHeight,
+} from '@react-hook/window-size'
+import './Course.css'
 
 const Course = () => {
+
+  const deviceWidth = useWindowWidth()
+  const deviceHeight = useWindowHeight()
+
   const courseData = {
     title: 'Python Mega Course',
     subtitle: 'Go from zero to hero in weeks',
@@ -109,24 +119,73 @@ const Course = () => {
     },
   }
 
+
+  const Desktop = ({ children }) => {
+    const isDesktop = useMediaQuery({ minWidth: 768, maxWidth: 1440 })
+    return isDesktop ? children : null
+  }
+  const Tablet = ({ children }) => {
+    const isTablet = useMediaQuery({ minWidth: 430, maxWidth: 768 })
+    return isTablet ? children : null
+  }
+  const Mobile = ({ children }) => {
+    const isMobile = useMediaQuery({ minWidth: 300, maxWidth: 430 })
+    return isMobile ? children : null
+  }
+  const Default = ({ children }) => {
+    const isNotMobile = useMediaQuery({ minWidth: 768 })
+    return isNotMobile ? children : null
+  }
+
   return (
     <div>
-      <CourseAdditionalInformation
-        originalPrice={courseData.originalPrice}
-        discountedPrice={courseData.discountedPrice}
-        imageUrl={courseData.imageUrl}
-      />
+      <Desktop>
+        <div className="course-details-upper-section-desktop" >
+          <div className="course-additional-information">
+            <CourseAdditionalInformation
+              originalPrice={courseData.originalPrice}
+              discountedPrice={courseData.discountedPrice}
+              imageUrl={courseData.imageUrl}
+            />
+          </div>
+          <div className="course-features-list">
+            <CourseFeaturesList
+              timeCountInHours={courseData.timeCountInHours}
+              numberOfArticles={courseData.numberOfArticles}
+              numberOfDownloadedResourses={courseData.numberOfDownloadedResourses}
+              numberOfPractiseSets={courseData.numberOfPractiseSets}
+              numberOfCodingExercises={courseData.numberOfCodingExercises}
+              accessDurationInDays={courseData.accessDurationInDays}
+              acessOnWhichDevices={courseData.acessOnWhichDevices}
+              isCertificateAvailable={courseData.isCertificateAvailable}
+            />
+          </div>
+        </div>
+      </Desktop>
 
-      <CourseFeaturesList
-        timeCountInHours={courseData.timeCountInHours}
-        numberOfArticles={courseData.numberOfArticles}
-        numberOfDownloadedResourses={courseData.numberOfDownloadedResourses}
-        numberOfPractiseSets={courseData.numberOfPractiseSets}
-        numberOfCodingExercises={courseData.numberOfCodingExercises}
-        accessDurationInDays={courseData.accessDurationInDays}
-        acessOnWhichDevices={courseData.acessOnWhichDevices}
-        isCertificateAvailable={courseData.isCertificateAvailable}
-      />
+      <Mobile>
+        <div className="course-details-upper-section-mobile" >
+          <div className="course-additional-information">
+            <CourseAdditionalInformation
+              originalPrice={courseData.originalPrice}
+              discountedPrice={courseData.discountedPrice}
+              imageUrl={courseData.imageUrl}
+            />
+          </div>
+          <div className="course-features-list">
+            <CourseFeaturesList
+              timeCountInHours={courseData.timeCountInHours}
+              numberOfArticles={courseData.numberOfArticles}
+              numberOfDownloadedResourses={courseData.numberOfDownloadedResourses}
+              numberOfPractiseSets={courseData.numberOfPractiseSets}
+              numberOfCodingExercises={courseData.numberOfCodingExercises}
+              accessDurationInDays={courseData.accessDurationInDays}
+              acessOnWhichDevices={courseData.acessOnWhichDevices}
+              isCertificateAvailable={courseData.isCertificateAvailable}
+            />
+          </div>
+        </div>
+      </Mobile>
 
       <CourseLearningTopics whatYouWillLearn={courseData.whatYouWillLearn} />
 
