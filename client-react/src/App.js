@@ -17,6 +17,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 import Profile from './pages/Profile/Profile'
 import Feedback from './pages/Feedback/Feedback'
 import Editor from './pages/Code/Editor'
+import Exam from './pages/Exam/Exam'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -44,6 +45,7 @@ function App() {
         <Route path="/feedback" component={Feedback} />
         <Route path="/editor" component={Editor} />
         <Route path="/payment" component={Payment} />
+        <Route path="/exam" component={Exam} />
       </Router>
     </>
   )

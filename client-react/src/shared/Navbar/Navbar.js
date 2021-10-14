@@ -58,7 +58,6 @@ export default function ButtonAppBar() {
                 <p className="signup-text">Signup</p>
               </Link>
             </div>
-
           </Toolbar>
         </AppBar>
       </Box>

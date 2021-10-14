@@ -29,6 +29,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Comments from '../Comments/Comments'
 import TextEditor from '../TextEditor/TextEditor'
+import { Link } from 'react-router-dom'
 import './CourseContentsEnrolled.css'
 
 const Accordion = styled((props) => (
@@ -174,7 +175,7 @@ const CourseContentsEnrolled = ({ content }) => {
                                 <ListItem disablePadding onClick={topic.isVideo ? () => playLectureVideo(topic.view) : () => viewLectureDocuments(topic.view)}>
                                   <ListItemButton>
                                     <ListItemIcon>
-                                      {topic.isVideo ? <OndemandVideoIcon /> : <DescriptionIcon style={{ color: '#316B83'}} />}
+                                      {topic.isVideo ? <OndemandVideoIcon /> : <DescriptionIcon style={{ color: '#316B83' }} />}
                                     </ListItemIcon>
                                     <ListItemText primary={topic.title} secondary={topic.subtitle} />
                                   </ListItemButton>
@@ -200,6 +201,12 @@ const CourseContentsEnrolled = ({ content }) => {
           Certificate
           <div className="certificate-gif-view">
             <img className="certificate-gif" src="assets/gifs/certificate.gif" alt="Certificate" />
+          </div>
+          <h4>To get certificate, complete the test</h4>
+          <div className="certificate-button">
+            <Link className="react-link-signup" to="/exam">
+              <p className="certificate-button-text">Start Exam ?</p>
+            </Link>
           </div>
         </TabPanel>
         {/* <TabPanel value={value} index={3}>
