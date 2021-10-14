@@ -9,16 +9,19 @@ const Exam = () => {
       question: "What is Python ?",
       options: ['Programming language', 'Code editor', 'OS', 'Mobile app'],
       correctOption: 0,
+      hint: 'Python is great',
     },
     {
       question: "What is Java ?",
-      options: ['Programming language', 'Code editor', 'OS', 'Mobile app'],
-      correctOption: 0,
+      options: ['Code editor', 'Programming language', 'OS', 'Mobile app'],
+      correctOption: 1,
+      hint: 'Java is superb'
     },
     {
       question: "What is C ?",
-      options: ['Programming language', 'Code editor', 'OS', 'Mobile app'],
-      correctOption: 0,
+      options: ['OS', 'Code editor', 'Programming language', 'Mobile app'],
+      correctOption: 2,
+      hint: 'C is decent'
     }
   ]
 
@@ -32,7 +35,7 @@ const Exam = () => {
 
 
 
-      <ExamComponent />
+      <ExamComponent examData={examData} />
 
 
     </div>
